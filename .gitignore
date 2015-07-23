@@ -1,2 +1,5 @@
-.idea
-.vagrant
+.idea/
+.vagrant/
+vendor/
+composer.lock
+tests/_output/
