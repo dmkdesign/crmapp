@@ -15,6 +15,13 @@ class CustomersController extends Controller
         return $this->render('index', compact('records'));
     }
 
+    public function actionAdd()
+    {
+        $customer = new CustomerRecord();
+        $phone = new PhoneRecord();
+        return $this->render('add', compact('customer', 'phone'));
+    }
+
     private function store(Customer $customer)
     {
         $customer_record = new CustomerRecord();
