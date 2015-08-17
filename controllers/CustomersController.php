@@ -15,6 +15,14 @@ class CustomersController extends Controller
         return $this->render('index', compact('records'));
     }
 
+    private function findRecordsByQuery()
+    {
+        $number = \Yii::$app->request->get('phone_number');
+        $records = $this->getRecordsByPhoneNumber($number);
+        $dataProvider = $this->wrapIntoDataProvider($records);
+        return $dataProvider;
+    }
+
     public function actionAdd()
     {
         $customer = new CustomerRecord();
