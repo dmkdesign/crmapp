@@ -19,7 +19,21 @@ class CustomersController extends Controller
     {
         $customer = new CustomerRecord();
         $phone = new PhoneRecord();
+
+        if ($this->load($customer, $phone, $_POST)) {
+            $this->store($this->makeCustomer($customer, $phone));
+            return $this->redirect('/customers');
+        }
+
         return $this->render('add', compact('customer', 'phone'));
+    }
+
+    private function load(CustomerRecord $customer, PhoneRecord $phone, array $post)
+    {
+        return $customer->load($post)
+        and $phone->load($post)
+        and $customer->validate()
+        and $phone->validate(['number']);
     }
 
     private function store(Customer $customer)
