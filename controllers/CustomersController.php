@@ -5,6 +5,7 @@ use app\models\customer\Customer;
 use app\models\customer\CustomerRecord;
 use app\models\customer\Phone;
 use app\models\customer\PhoneRecord;
+use yii\data\ArrayDataProvider;
 use yii\web\Controller;
 
 class CustomersController extends Controller
@@ -21,6 +22,16 @@ class CustomersController extends Controller
         $records = $this->getRecordsByPhoneNumber($number);
         $dataProvider = $this->wrapIntoDataProvider($records);
         return $dataProvider;
+    }
+
+    private function wrapIntoDataProvider($data)
+    {
+        return new ArrayDataProvider(
+            [
+                'allModels' => $data,
+                'pagination' => false
+            ]
+        );
     }
 
     public function actionAdd()
