@@ -100,4 +100,9 @@ class CustomersController extends Controller
             $phone_record->save();
         }
     }
+
+    public function actionQuery()
+    {
+        return $this->render('query');
+    }
 }
