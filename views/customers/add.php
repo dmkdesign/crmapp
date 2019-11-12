@@ -22,6 +22,7 @@ echo $form->errorSummary([$customer, $phone]);
 echo $form->field($customer, 'name');
 echo $form->field($customer, 'birth_date');
 echo $form->field($customer, 'notes');
+echo $form->field($customer, 'sales_status')->dropDownList(CustomerRecord::getSalesStatusList(),['prompt'=>'-----Select Status------']);
 
 echo $form->field($phone, 'number');
 
