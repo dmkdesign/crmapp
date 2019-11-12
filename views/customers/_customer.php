@@ -4,9 +4,14 @@ echo \yii\widgets\DetailView::widget(
         'model' => $model,
         'attributes' => [
             ['attribute' => 'name'],
-            ['attribute' => 'birth_date', 'value' => $model->birth_date->format('Y-m-d')],
+            ['attribute' => 'birth_date'],
             'notes:text',
-            ['label' => 'Phone Number', 'attribute' => 'phones.0.number']
+           // ['label' => 'Phone Number', 'attribute' => 'phone']
         ]
     ]
 );
+
+echo \nemmo\attachments\components\AttachmentsTable::widget([
+	'model' => $model,
+	//'showDeleteButton' => false, // Optional. Default value is true
+]);

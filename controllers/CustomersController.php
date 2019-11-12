@@ -35,8 +35,11 @@ class CustomersController extends Controller
         if (!$customer_record) {
             return [];
         }
-
-        return [$this->makeCustomer($customer_record, $phone_record)];
+	else
+{
+	return [$customer_record]; 
+}
+       // return [$this->makeCustomer($customer_record, $phone_record)];
     }
 
     private function makeCustomer(
@@ -69,7 +72,9 @@ class CustomersController extends Controller
         $phone = new PhoneRecord();
 
         if ($this->load($customer, $phone, $_POST)) {
-            $this->store($this->makeCustomer($customer, $phone));
+           	$customer->save();
+		$phone->customer_id = $customer->id;
+		$phone->save();
             return $this->redirect('customers');
         }
 

@@ -10,7 +10,16 @@ class CustomerRecord extends ActiveRecord
     {
         return 'customer';
     }
-
+	public function behaviors()
+{
+	return [
+	
+		'fileBehavior' => [
+			'class' => \nemmo\attachments\behaviors\FileBehavior::className()
+		]
+	
+	];
+}
     public function rules()
     {
         return [
@@ -18,7 +27,12 @@ class CustomerRecord extends ActiveRecord
             ['name', 'required'],
             ['name', 'string', 'max' => 256],
             //['birth_date', 'date', 'format' => 'Y-m-d'],
-            ['notes', 'safe']
+            [['notes','birth_date'], 'safe']
         ];
     }
+//set phones relationship	
+	public function getPhone()
+	{
+		return $this->hasOne(PhoneRecord::className(), ['customer_id'=>'id']);
+	}
 }

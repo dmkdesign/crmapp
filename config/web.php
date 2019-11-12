@@ -1,4 +1,5 @@
 <?php
+
 return [
     'id' => 'crmapp',
     'basePath' => realpath(__DIR__ . '/../'),
@@ -14,7 +15,7 @@ return [
         ],
     'modules' => [
             'attachments' => [
-            'class' => 'nemmo\attachments\Module::className()',
+            'class' => 'nemmo\attachments\Module',
             'tempPath' => '@app/uploads/temp',
             'storePath' => '@app/uploads/store',
             'rules' => [ // Rules according to the FileValidator
