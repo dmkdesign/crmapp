@@ -14,7 +14,6 @@ class m150729_193243_init_customer_table extends Migration
                 'birth_date' => 'date',
                 'notes' => 'text',
             ],
-            'ENGINE=InnoDB'
         );
     }
 
