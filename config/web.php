@@ -25,12 +25,5 @@ return [
             'tableName' => '{{%attachments}}' // Optional, default to 'attach_file'
         ]
     ],
-    'controllerMap' => [
-        'migrate' => [
-            'class' => 'yii\console\controllers\MigrateController',
-            'migrationNamespaces' => [
-                'nemmo\attachments\migrations',
-            ],
-        ],
-    ],
+    
 ];
