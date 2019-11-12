@@ -2,7 +2,8 @@
     "require": {
         "codeception/codeception": "*",
         "fzaninotto/faker": "*",
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "*",
+        "nemmo/yii2-attachments": "~1.0.0"
     },
   "extra": {
     "asset-installer-paths": {
