@@ -31,7 +31,7 @@ class CustomersController extends Controller
             return [];
         }
 
-        $customer_record = CustomerRecord::findOne($phone_record->customer_id);
+        $customer_record = Customer::findOne($phone_record->customer_id);
         if (!$customer_record) {
             return [];
         }

@@ -8,6 +8,6 @@ class Customer extends CustomerRecord
     /** @var PhoneRecord[] */
     
 
-   
+
 	
 }
