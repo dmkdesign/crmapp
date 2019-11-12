@@ -26,14 +26,5 @@ class CustomerRecord extends ActiveRecord
 	{
 		return $this->hasOne(PhoneRecord::className(), ['customer_id'=>'id']);
     }
-    public function behaviors()
-    {
-        return [
-        
-            'fileBehavior' => [
-                'class' => \nemmo\attachments\behaviors\FileBehavior::className()
-            ]
-        
-        ];
-    }
+   
 }
