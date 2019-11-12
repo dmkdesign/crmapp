@@ -11,6 +11,17 @@ class CustomerRecord extends ActiveRecord
         return 'customer';
     }
 
+    public function behaviors()
+    {
+        return [
+        
+            'fileBehavior' => [
+                'class' => \nemmo\attachments\behaviors\FileBehavior::className()
+            ]
+        
+        ];
+    }
+	
     public function rules()
     {
         return [
