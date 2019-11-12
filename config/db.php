@@ -1,7 +1,10 @@
 <?php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=crmapp',
+	'driverName' => 'sqlsrv',
+    'dsn' => 'sqlsrv:Server=localhost;Database=crmapp',
     'username' => 'root',
-    'password' => 'mysqlroot'
+    'password' => 'S0m3passw0rd',
+    'charset' => 'utf8'
+	
 ];

@@ -26,7 +26,7 @@ class CustomersController extends Controller
 
     private function getRecordsByPhoneNumber($number)
     {
-        $phone_record = PhoneRecord::findOne(['number' => $number]);
+        $phone_record = PhoneRecord::find()->andFilterWhere(['like','number',$number])->one();
         if (!$phone_record) {
             return [];
         }
@@ -70,7 +70,7 @@ class CustomersController extends Controller
 
         if ($this->load($customer, $phone, $_POST)) {
             $this->store($this->makeCustomer($customer, $phone));
-            return $this->redirect('/customers');
+            return $this->redirect('customers');
         }
 
         return $this->render('add', compact('customer', 'phone'));
