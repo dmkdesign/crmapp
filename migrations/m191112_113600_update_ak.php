@@ -7,7 +7,7 @@ class m191112_113600_update_ak extends Migration
     public function up()
     {
         $this->addColumn(
-            'customer','sales_status'
+            'customer','sales_status',$this->integer()->defaultValue('1')
         );
 
     }
