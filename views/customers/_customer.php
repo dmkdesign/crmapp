@@ -6,6 +6,11 @@ echo \yii\widgets\DetailView::widget(
             ['attribute' => 'name'],
             ['attribute' => 'birth_date'],
             'notes:text',
+            ['attribute'=>'status',
+            'value'=>function($data)
+            {
+                return Customer::$SALES_STATUS($data->status);
+            }
            // ['label' => 'Phone Number', 'attribute' => 'phone']
         ]
     ]
