@@ -12,7 +12,7 @@ class m150729_195610_init_phone_table extends Migration
                 'id' => 'pk',
                 'customer_id' => 'int unique',
                 'number' => 'string',
-            ],
+            ]
         );
 
         $this->addForeignKey('customer_phone_numbers', 'phone', 'customer_id', 'customer', 'id');

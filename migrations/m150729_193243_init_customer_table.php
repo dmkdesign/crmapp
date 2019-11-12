@@ -13,7 +13,7 @@ class m150729_193243_init_customer_table extends Migration
                 'name' => 'string',
                 'birth_date' => 'date',
                 'notes' => 'text',
-            ],
+            ]
         );
     }
 
