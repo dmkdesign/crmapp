@@ -44,5 +44,11 @@ class CustomerRecord extends ActiveRecord
         $array = array_flip(self::$SALES_STATUS);
         return $array;
     }
+
+	public function getSalesStatus()
+    {
+        return array_flip(self::$SALES_STATUS)[$this->sales_status];
+       
+    }
    
 }

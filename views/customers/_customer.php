@@ -1,4 +1,5 @@
 <?php
+use app\models\customer\CustomerRecord;
 echo \yii\widgets\DetailView::widget(
     [
         'model' => $model,
@@ -9,9 +10,15 @@ echo \yii\widgets\DetailView::widget(
             ['attribute'=>'status',
             'value'=>function($data)
             {
-                return Customer::$SALES_STATUS($data->status);
+                return $data->salesStatus;
+            }],
+            ['label' => 'Phone Number', 'attribute' => 'phone',
+		'value'=>function($data)
+            {
+		if(!empty($data->phone))
+                	return $data->phone->number;
             }
-           // ['label' => 'Phone Number', 'attribute' => 'phone']
+		]
         ]
     ]
 );
