@@ -42,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $data->salesStatus;
                 }
             ],
-
+            'phone.number',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

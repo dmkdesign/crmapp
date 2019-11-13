@@ -66,6 +66,12 @@ class Customer extends \yii\db\ActiveRecord
         ];
     }
 
+    public function beforeDelete()
+    {
+        $phone = $this->phone;
+        $phone->delete();
+        
+    }
     /**
      * @return \yii\db\ActiveQuery
      */
