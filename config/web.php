@@ -14,7 +14,7 @@ return [
         ]
         ],
     'modules' => [
-            'attachments' => [
+        'attachments' => [
             'class' => 'nemmo\attachments\Module',
             'tempPath' => '@app/uploads/temp',
             'storePath' => '@app/uploads/store',
@@ -24,6 +24,13 @@ return [
                 'maxSize' => 1024 * 1024 // 1 MB
             ],
             'tableName' => '{{%attachments}}' // Optional, default to 'attach_file'
+        ],
+        'gii'=>[
+            'class' => 'yii\gii\Module',
+            'allowedIPs' => ['*'],
+    
+            // or allow localhost only
+            // 'allowedIPs' => ['127.0.0.1', '::1'],
         ]
     ],
     
