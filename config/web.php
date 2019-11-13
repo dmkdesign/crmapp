@@ -3,6 +3,7 @@
 return [
     'id' => 'crmapp',
     'basePath' => realpath(__DIR__ . '/../'),
+    //'basePath' => dirname(__DIR__),
     'components' => [
         'request' => [
             'cookieValidationKey' => '1021c636f4ae69fb3eb71c66441c9458',
@@ -10,7 +11,12 @@ return [
         'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
-            'showScriptName' => false
+            'showScriptName' => false,
+            'rules' => [
+                '<controller:\w+>/<id:\d+>'              => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'          => '<controller>/<action>',
+            ],
         ]
         ],
     'modules' => [
