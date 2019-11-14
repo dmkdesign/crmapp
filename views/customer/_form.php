@@ -23,21 +23,23 @@ use app\models\Customer ;
     <?=  $form->field($model, 'sales_status')->dropDownList(Customer::getSalesStatusList(),['prompt'=>'-----Select Status------']); ?>
     <?= $form->field($phone, 'number')->textInput() ?>
 
- <?php   echo \nemmo\attachments\components\AttachmentsInput::widget([
-	'id' => 'file-input', // Optional
-	'model' => $model,
-	'options' => [ // Options of the Kartik's FileInput widget
-		'multiple' => false, // If you want to allow multiple upload, default to false
-	],
-	'pluginOptions' => [ // Plugin options of the Kartik's FileInput widget 
-		'maxFileCount' => 1 // Client max files
-	]
-]);
-?>
+ 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
-
+    <?php   echo \nemmo\attachments\components\AttachmentsInput::widget([
+	'id' => 'file-input', // Optional
+	'model' => $model,
+	'options' => [ // Options of the Kartik's FileInput widget
+        'multiple' => false, // If you want to allow multiple upload, default to false
+        'resizeImages'=>true,
+	],
+	'pluginOptions' => [ // Plugin options of the Kartik's FileInput widget 
+        'maxFileCount' => 1, // Client max files
+        //'allowedPreviewTypes'=>false
+	]
+]);
+?>
     <?php ActiveForm::end(); ?>
-
+    
 </div>

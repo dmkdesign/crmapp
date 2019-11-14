@@ -26,7 +26,7 @@ return [
             'storePath' => '@app/uploads/store',
             'rules' => [ // Rules according to the FileValidator
                 'maxFiles' => 1, // Allow to upload maximum 3 files, default to 3
-                'mimeTypes' => 'image/png', // Only png images
+                
                 'maxSize' => 1024 * 1024 // 1 MB
             ],
             'tableName' => '{{%attachments}}' // Optional, default to 'attach_file'

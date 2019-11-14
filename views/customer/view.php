@@ -33,7 +33,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'birth_date',
             'notes',
-            'sales_status',
+            ['value'=>$model->salesStatus,
+            'label'=>'Sale Status'],
             'phone.number'
         ],
     ])    ; 
